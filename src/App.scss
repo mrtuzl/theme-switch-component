@@ -1,9 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
-* {
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+$font: 'Tilt Neon', cursive;
+$dbgcolor: #1f262a;
+$dcolor: #F8F7F9;
+$lbgcolor: #e2eaf5;
+$lcolor: #282c34;
+
+*{
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-family: "Tilt Neon", cursive;
+  font-family: $font;
 }
 
 .App-header {
@@ -14,7 +21,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
-
 .switch {
   position: relative;
   display: inline-block;
@@ -22,7 +28,7 @@
   height: 30px;
 }
 
-.switch input {
+.switch input { 
   opacity: 0;
   width: 0;
   height: 0;
@@ -36,7 +42,8 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: 0.4s;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 .slider:before {
@@ -47,7 +54,8 @@
   left: 6px;
   bottom: 4px;
   background-color: white;
-  transition: 0.4s;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 input:checked + .slider {
@@ -59,6 +67,8 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
@@ -71,23 +81,21 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.light {
-  background-color: #e2eaf5;
-  color: #282c34;
+.light{
+  background-color: $lbgcolor;
+  color: $lcolor;
 }
-
 .dark {
-  background-color: #1f262a;
-  color: #F8F7F9;
+  background-color: $dbgcolor;
+  color: $dcolor;
 }
-
-.toggle {
+.toggle{
   display: flex;
   align-items: center;
+  span{
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: $font;
+   }
 }
-.toggle span {
-  padding: 10px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  font-family: "Tilt Neon", cursive;
-}/*# sourceMappingURL=App.css.map */
